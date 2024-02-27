@@ -49,6 +49,12 @@
                             </div>
                         </div>
 
+                        {{-- phân quyền --}}
+                        <div class="form-group row justify-content-center">
+                            <div class="col-sm-10 col-md-9 col-lg-7 mb-3 mb-sm-0">
+                                <input type="text" name="permission" class="form-control form-control-user" value="{{ isset($record->permission)?$record->permission:'' }}" placeholder="Phân quyền" required>
+                            </div>
+                        </div>
                         <!-- password -->
                         @php
                             $placeholder = "Password";

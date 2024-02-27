@@ -28,8 +28,9 @@ class UsersController extends Controller
     public function updatePost(Request $request,$id)
     {
         $name = $request->get("name");
+        $permission = $request->get("permission");
         $password = $request->get("password");
-        DB::table("users")->where("id","=",$id)->update(["name"=>$name]);
+        DB::table("users")->where("id","=",$id)->update(["name"=>$name,"permission"=>$permission]);
         if($password != "")
         {
             $password = Hash::make($password);
@@ -48,11 +49,12 @@ class UsersController extends Controller
     public function createPost(Request $request){
         $name = $request->get("name");
         $email = $request->get("email");
+        $permission = $request->get("permission");
         $password = $request->get("password");
         $password = Hash::make($password);
         $check = DB::table("users")->where("email","=",$email)->first();
         if(isset($check->email) == false){
-            DB::table("users")->insert(["name"=>$name,"email"=>$email,"password"=>$password]);
+            DB::table("users")->insert(["name"=>$name,"email"=>$email,"permission"=>$permission,"password"=>$password]);
             return redirect(url("admin/users"));
         }else
             return redirect(url("admin/users/create?notify=email-exists"));    

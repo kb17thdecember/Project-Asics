@@ -73,6 +73,7 @@ Route::get('admin/customers/delete/{id}',[CustomersBController::class,'delete'])
 //CRUD categories
 use App\Http\Controllers\Admin\CategoriesController;
 Route::get('admin/categories',[CategoriesController::class,'read'])->middleware("check-login");
+Route::get('admin/small-category',[CategoriesController::class,'small'])->middleware("check-login");
 Route::get('admin/categories/update/{id}',[CategoriesController::class,'update'])->middleware("check-login");
 Route::post('admin/categories/update-post/{id}',[CategoriesController::class,'updatePost'])->middleware("check-login");
 Route::get('admin/categories/create',[CategoriesController::class,'create'])->middleware("check-login");
@@ -104,6 +105,14 @@ Route::get('admin/orders/detail/{id}',[OrdersController::class,'detail'])->middl
 //update tinh trang don hang thanh da giao hang
 Route::get('admin/orders/update/{id}',[OrdersController::class,'update'])->middleware("check-login");
 
+// Feedbacks
+use App\Http\Controllers\Admin\FeedbacksController;
+Route::get('admin/feedbacks',[FeedbacksController::class,'read'])->middleware("check-login");
+
+// notification
+use App\Http\Controllers\Admin\NotificationController;
+Route::get('admin/notification',[NotificationController::class,'read'])->middleware("check-login");
+
 //Frontend
 //Add các controller của phần này
 use App\Http\Controllers\Frontend\HomeController;
@@ -113,6 +122,7 @@ use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\CustomersController;
 //do trong Admin đã có NewsController nên ở đây cũng phải đặt tên khác
 use App\Http\Controllers\Frontend\NewsController as NewsFrontend;
+use App\Http\Controllers\Frontend\FeedbacksControllersController as FeedbacksFrontend;
 //trang chủ
 Route::get("",[HomeController::class,"read"]);
 // trang giỏ hàng
@@ -159,3 +169,6 @@ Route::get('blogs/news/{id}',[NewsFrontend::class,'topic']);
 //liên hệ
 use App\Http\Controllers\Frontend\ContactController;
 Route::get("/contact",[ContactController::class,"read"]);
+// nhập phản hồi
+Route::get("/feedbacks/create",[FeedbacksFrontend::class,"create"]);
+Route::post("/feedbacks/create-post",[FeedbacksFrontend::class,"createPost"]);

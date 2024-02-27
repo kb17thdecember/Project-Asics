@@ -14,6 +14,12 @@ class CategoriesController extends Controller
         return view("admin.categories.read",["data"=>$data]);
     }
 
+    //small
+    public function small(Request $request){
+        $data = Categories::orderBy("id","desc")->where("parent_id","!=","0")->paginate();
+        return view("admin.categories.small-category",["data"=>$data]);
+    }
+    
     //update
     public function update($id){
         $record = Categories::where("id","=",$id)->first();

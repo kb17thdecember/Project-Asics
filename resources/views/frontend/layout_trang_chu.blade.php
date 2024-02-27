@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{{  asset('frontend/fonts/quicksand/css/Quicksand_300,400,500,700.css')  }}">
     <link rel="stylesheet" href="{{  asset('frontend/fonts/awesome/css/all.min.css')  }}">
     <link rel="stylesheet" href="{{  asset('frontend/sass/css/style.css')  }}">
+    <link rel="stylesheet" href="{{  asset('frontend/sass/css/chat.css')  }}">
     <link rel="stylesheet" href="{{ asset('frontend/sass/css/css1.css') }}">
     <link rel="stylesheet" href="{{  asset('frontend/slick/slick.min.css')  }}">
     <link rel="stylesheet" href="{{  asset('frontend/slick/slick-theme.min.css')  }}">
@@ -46,14 +47,14 @@
             <div class="container-fluid">
                 <div class="rowFlexMargin flexAlignCenter flexJustiCenter">
                     <div class="col-md-6">
-                        <h3 class="title">Đăng kí nhận tin</h3>
-                        <p class="content">Đăng ký Email để theo dõi những sản phẩm được giảm giá của chúng tôi</p>
+                        <h3 class="title">Phản hồi của bạn</h3>
+                        <p class="content">Để lại phản hồi của bạn giúp chúng ta hiểu nhau hơn.</p>
                     </div>
                     <div class="col-md-6">
                         <div class="form-newsletter"> 
-                            <form class="contact-form" method="post">
+                            <form {{ url('customers/register-post') }} class="contact-form" method="post">
                                 <div class="form-group">
-                                    <input type="email" placeholder="Nhập email của bạn" class="inputNew form-control grey newsletter-input">
+                                    <input type="text" placeholder="Nhập nội dung ở đây" class="inputNew form-control grey newsletter-input">
                                     <button style="background-color: darkblue" type="submit" class="button dark submitNewsletter"><span>Gửi</span></button>
                                 </div>
                             </form>
@@ -130,6 +131,7 @@
                 </div>
             </div>
         </footer>
+        
 <!-- footer end -->
     </div>
     <script type="text/javascript" src="{{ asset('frontend/jquery/jquery.min.js') }}"></script>

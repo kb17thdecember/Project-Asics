@@ -13,7 +13,7 @@
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <a href="{{ asset('admin/customers/create') }}" class="btn btn-info">Thêm người dùng</a>
+        <a href="{{ asset('admin/customers/create') }}" class="btn btn-info"><i class="fa-solid fa-user-plus"></i></a>
     </div>
     <div class="card-body">
         <div class="table-responsive">
@@ -44,8 +44,8 @@
                         <td>{{  $row->address  }}</td>
                         <td>{{  $row->phone  }}</td>
                         <td>
-                            <a href="{{ asset('admin/customers/update/'.$row->id) }}" class="btn btn-info btn-sm">Sửa</a>&nbsp;
-                            <a href="{{ asset('admin/customers/delete/'.$row->id) }}" class="btn btn-success btn-sm" onclick="return window.confirm('Are you sure ?');">Xóa</a>
+                            <a href="{{ asset('admin/customers/update/'.$row->id) }}" style="position: relative; left: 15px" class="btn btn-info btn-sm"><i class="fa-solid fa-user-pen"></i></a>&nbsp;
+                            <a href="{{ asset('admin/customers/delete/'.$row->id) }}" style="position: relative; left: 15px" class="btn btn-success btn-sm" onclick="return window.confirm('Bạn chắc chắn muốn xóa ?');"><i class="fa-solid fa-user-minus"></i></a>
                         </td>
                     </tr>
                     @endforeach

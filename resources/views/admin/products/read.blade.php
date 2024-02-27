@@ -2,7 +2,7 @@
 @section('append-du-lieu-view')
 
 <!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800">Products</h1>
+<h1 class="h3 mb-2 text-gray-800">Danh sách sản phẩm</h1>
 
 <!-- DataTales Example -->
 <div class="card shadow mb-4">
@@ -57,8 +57,8 @@
                             @endif
                         </td>
                         <td>
-                            <a href="{{ asset('admin/products/update/'.$row->id) }}" class="btn btn-info btn-sm">Sửa</a>&nbsp;
-                            <a href="{{ asset('admin/products/delete/'.$row->id) }}" class="btn btn-success btn-sm" onclick="return window.confirm('Are you sure ?');">Xóa</a>
+                            <a href="{{ asset('admin/products/update/'.$row->id) }}" class="btn btn-info btn-sm"><i class="fa-regular fa-pen-to-square"></i></a>&nbsp;
+                            <a href="{{ asset('admin/products/delete/'.$row->id) }}" class="btn btn-success btn-sm" onclick="return window.confirm('Bạn chắc chắn muốn xóa ?');"><i class="fa-solid fa-trash"></i></a>
                         </td>
                     </tr>
                     @endforeach

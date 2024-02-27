@@ -36,27 +36,11 @@
                         @endif
                         </td>
                         <td>
-                            <a href="{{ asset('admin/categories/update/'.$row->id) }}" style="position: relative; left: 70px" class="btn btn-info btn-sm">Sửa</a>&nbsp;
-                            <a href="{{ asset('admin/categories/delete/'.$row->id) }}" style="position: relative; left: 70px" class="btn btn-success btn-sm" onclick="return window.confirm('Are you sure ?');">Xóa</a>
+                            <a href="{{ asset('admin/categories/update/'.$row->id) }}" style="position: relative; left: 90px" class="btn btn-info btn-sm"><i class="fa-regular fa-pen-to-square"></i></a>&nbsp;
+                            <a href="{{ asset('admin/categories/delete/'.$row->id) }}" style="position: relative; left: 90px" class="btn btn-success btn-sm" onclick="return window.confirm('Bạn chắc chắn muốn xóa ?');"><i class="fa-solid fa-trash"></i></a>&nbsp;
+                            <a href="{{ asset('admin/small-category/') }}" style="position: relative; left: 90px" class="btn btn-info btn-sm"><i class="fa-regular fa-folder-open"></i></a>
                         </td>
                     </tr>
-                    @php
-                        $subCategories = DB::table("categories")->where("parent_id","=",$row->id)->orderBy("id","desc")->get();
-                    @endphp
-                    @foreach($subCategories as $rowSub)
-                    <tr>
-                        <td style="padding-left: 40px;">{{ $rowSub->name }}</td>
-                        <td>
-                        @if($rowSub->display_at_home_page == 1)
-                            <span class="fas fa-check"></span>
-                        @endif
-                        </td>
-                        <td>
-                            <a href="{{ asset('admin/categories/update/'.$rowSub->id) }}" class="btn btn-warning btn-sm" style="position: relative; left: 70px">Sửa</a>&nbsp;
-                            <a href="{{ asset('admin/categories/delete/'.$rowSub->id) }}" class="btn btn-danger btn-sm" style="position: relative; left: 70px" onclick="return window.confirm('Are you sure ?');">Xóa</a>
-                        </td>
-                    </tr>
-                    @endforeach
                     @endforeach
                 </tbody>
             </table>

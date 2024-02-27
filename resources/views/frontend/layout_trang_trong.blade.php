@@ -129,6 +129,9 @@
                 </div>
             </div>
         </footer>
+        <div class="chat-user">
+            <a href=""><i class="fa-regular fa-comment-dots"></i></a>
+        </div>
     <!-- footer end -->
     </div>
     <script type="text/javascript" src="{{ asset('frontend/jquery/jquery.min.js') }}"></script>

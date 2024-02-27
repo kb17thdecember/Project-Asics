@@ -3151,3 +3151,15 @@ ABOUT - CONTACT
 	transform: scale(1.2);
 }
 .box-map iframe { display: block;}
+
+.chat-user i{
+  font-size: 30px;
+  color: white;
+  border: 1px solid;
+  padding: 15px;
+  border-radius: 50%;
+  background-color: #65d1e6;
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+}
